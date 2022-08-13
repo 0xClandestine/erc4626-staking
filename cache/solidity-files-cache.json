@@ -9,15 +9,52 @@
     ]
   },
   "files": {
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/lib/ds-test/src/test.sol": {
-      "lastModificationDate": 1660165179185,
-      "contentHash": "962996f0e05d5218857a538a62d7c47e",
-      "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/clones-with-immutable-args/src/Clone.sol": {
+      "lastModificationDate": 1660374155410,
+      "contentHash": "81b2aa906ceb38c83eeb38d7f1a02d02",
+      "sourceName": "lib/clones-with-immutable-args/src/Clone.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "Clone": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Clone.sol/Clone.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/ds-test/src/test.sol": {
+      "lastModificationDate": 1660374159669,
+      "contentHash": "962996f0e05d5218857a538a62d7c47e",
+      "sourceName": "lib/ds-test/src/test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -42,112 +79,19 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {
         "DSTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "test.sol/DSTest.json"
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "test.sol/DSTest.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/src/Script.sol": {
-      "lastModificationDate": 1660165176548,
-      "contentHash": "b313d0193442f5a12848be9c422a0064",
-      "sourceName": "lib/forge-std/src/Script.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/auth/Owned.sol": {
+      "lastModificationDate": 1660374260582,
+      "contentHash": "cbb684ea20bea675b7d97397da4bfd95",
+      "sourceName": "lib/solmate/src/auth/Owned.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol"
-      ],
-      "versionRequirement": ">=0.6.0, <0.9.0",
-      "artifacts": {
-        "Script": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Script.sol/Script.json"
-        }
-      }
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/src/Test.sol": {
-      "lastModificationDate": 1660165176551,
-      "contentHash": "53ceea3c517ab4a534fd89689f36aee9",
-      "sourceName": "lib/forge-std/src/Test.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/Script.sol",
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol"
-      ],
-      "versionRequirement": ">=0.6.0, <0.9.0",
-      "artifacts": {
-        "Test": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/Test.json"
-        },
-        "stdError": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdError.json"
-        },
-        "stdMath": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdMath.json"
-        },
-        "stdStorage": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdStorage.json"
-        }
-      }
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/src/Vm.sol": {
-      "lastModificationDate": 1660165176553,
-      "contentHash": "87cafdea05acb705b59c6fa2a685d229",
-      "sourceName": "lib/forge-std/src/Vm.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -169,96 +113,22 @@
         }
       },
       "imports": [],
-      "versionRequirement": ">=0.6.0, <0.9.0",
+      "versionRequirement": ">=0.8.0",
       "artifacts": {
-        "Vm": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Vm.sol/Vm.json"
+        "Owned": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Owned.sol/Owned.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/src/console.sol": {
-      "lastModificationDate": 1660165176555,
-      "contentHash": "100b8a33b917da1147740d7ab8b0ded3",
-      "sourceName": "lib/forge-std/src/console.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.4.22, <0.9.0",
-      "artifacts": {
-        "console": {
-          "0.8.10+commit.fc410830.Linux.gcc": "console.sol/console.json"
-        }
-      }
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/forge-std/src/console2.sol": {
-      "lastModificationDate": 1660165176558,
-      "contentHash": "5df91f8e93efbfcccf68973dc1b74a70",
-      "sourceName": "lib/forge-std/src/console2.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.4.22, <0.9.0",
-      "artifacts": {
-        "console2": {
-          "0.8.10+commit.fc410830.Linux.gcc": "console2.sol/console2.json"
-        }
-      }
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/solmate/src/mixins/ERC4626.sol": {
-      "lastModificationDate": 1660190817758,
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/mixins/ERC4626.sol": {
+      "lastModificationDate": 1660374260593,
       "contentHash": "b3b17f857a7cdf1ebd62b5c46e700f12",
       "sourceName": "lib/solmate/src/mixins/ERC4626.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -287,19 +157,19 @@
       "versionRequirement": ">=0.8.0",
       "artifacts": {
         "ERC4626": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC4626.sol/ERC4626.json"
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC4626.sol/ERC4626.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/solmate/src/tokens/ERC20.sol": {
-      "lastModificationDate": 1660165159409,
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/tokens/ERC20.sol": {
+      "lastModificationDate": 1660374260695,
       "contentHash": "0c7c7ada139062536af09d69d96d395c",
       "sourceName": "lib/solmate/src/tokens/ERC20.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -324,19 +194,59 @@
       "versionRequirement": ">=0.8.0",
       "artifacts": {
         "ERC20": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC20.sol/ERC20.json"
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20.sol/ERC20.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/solmate/src/utils/FixedPointMathLib.sol": {
-      "lastModificationDate": 1660165159422,
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/tokens/ERC721.sol": {
+      "lastModificationDate": 1660374260697,
+      "contentHash": "ecc06cefc5404b9e1adbc2e459d5757e",
+      "sourceName": "lib/solmate/src/tokens/ERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "ERC721": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC721.sol/ERC721.json"
+        },
+        "ERC721TokenReceiver": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC721.sol/ERC721TokenReceiver.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/utils/FixedPointMathLib.sol": {
+      "lastModificationDate": 1660374260706,
       "contentHash": "a325f1ebf8e23098b8a8c882f84609d4",
       "sourceName": "lib/solmate/src/utils/FixedPointMathLib.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -361,19 +271,19 @@
       "versionRequirement": ">=0.8.0",
       "artifacts": {
         "FixedPointMathLib": {
-          "0.8.10+commit.fc410830.Linux.gcc": "FixedPointMathLib.sol/FixedPointMathLib.json"
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "FixedPointMathLib.sol/FixedPointMathLib.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/lib/solmate/src/utils/SafeTransferLib.sol": {
-      "lastModificationDate": 1660165159432,
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/utils/SafeTransferLib.sol": {
+      "lastModificationDate": 1660374260714,
       "contentHash": "db5e8a3ee2df4fb8eb2d552a01753920",
       "sourceName": "lib/solmate/src/utils/SafeTransferLib.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -400,52 +310,19 @@
       "versionRequirement": ">=0.8.0",
       "artifacts": {
         "SafeTransferLib": {
-          "0.8.10+commit.fc410830.Linux.gcc": "SafeTransferLib.sol/SafeTransferLib.json"
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "SafeTransferLib.sol/SafeTransferLib.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/src/Chef.sol": {
-      "lastModificationDate": 1660281456003,
-      "contentHash": "eecbb5fb7f21995ab3f9753bee33fe37",
-      "sourceName": "src/Chef.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/ERC20StakingPool.sol": {
+      "lastModificationDate": 1660381552077,
+      "contentHash": "d4f555c879bc1a4041597986d58ed39e",
+      "sourceName": "src/ERC20StakingPool.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [],
-      "versionRequirement": null,
-      "artifacts": {}
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/src/ERC4626Gauge.sol": {
-      "lastModificationDate": 1660282057761,
-      "contentHash": "7037f4e52d777424a641d8bfbdbac2e6",
-      "sourceName": "src/ERC4626Gauge.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -467,115 +344,70 @@
         }
       },
       "imports": [
-        "lib/solmate/src/mixins/ERC4626.sol",
-        "lib/solmate/src/tokens/ERC20.sol",
-        "lib/solmate/src/utils/FixedPointMathLib.sol",
-        "lib/solmate/src/utils/SafeTransferLib.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "ERC4626Gauge": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC4626Gauge.sol/ERC4626Gauge.json"
-        }
-      }
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/src/ERC4626StakingRewards.sol": {
-      "lastModificationDate": 1660250443307,
-      "contentHash": "989abd41db1b7a51f3ad3536e20760b5",
-      "sourceName": "src/ERC4626StakingRewards.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [],
-      "versionRequirement": null,
-      "artifacts": {}
-    },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/src/test/ERC4626Gauge.t.sol": {
-      "lastModificationDate": 1660281913994,
-      "contentHash": "3487fa9cdeb44a47027a3d995e0b8714",
-      "sourceName": "src/test/ERC4626Gauge.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/Script.sol",
-        "lib/forge-std/src/Test.sol",
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol",
+        "lib/solmate/src/auth/Owned.sol",
         "lib/solmate/src/mixins/ERC4626.sol",
         "lib/solmate/src/tokens/ERC20.sol",
         "lib/solmate/src/utils/FixedPointMathLib.sol",
         "lib/solmate/src/utils/SafeTransferLib.sol",
-        "src/ERC4626Gauge.sol"
+        "src/lib/FullMath.sol",
+        "src/lib/Multicall.sol",
+        "src/lib/SelfPermit.sol"
       ],
-      "versionRequirement": "=0.8.10",
+      "versionRequirement": "^0.8.4",
       "artifacts": {
-        "ERC4626GaugeTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC4626Gauge.t.sol/ERC4626GaugeTest.json"
-        },
-        "MockERC20": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC4626Gauge.t.sol/MockERC20.json"
-        },
-        "MockGauge": {
-          "0.8.10+commit.fc410830.Linux.gcc": "ERC4626Gauge.t.sol/MockGauge.json"
+        "ERC20StakingPool": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20StakingPool.sol/ERC20StakingPool.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/unsolidly/src/test/ERC4626StakingRewards.t.sol": {
-      "lastModificationDate": 1660229883389,
-      "contentHash": "fc43926711d783253fd04bc315d0adb1",
-      "sourceName": "src/test/ERC4626StakingRewards.t.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/ERC20.sol": {
+      "lastModificationDate": 1660374093847,
+      "contentHash": "2cbc5f91cd3cc9ee6d15f98652cb3cc7",
+      "sourceName": "src/lib/ERC20.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/clones-with-immutable-args/src/Clone.sol"
+      ],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "ERC20": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20.sol/ERC20.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/FullMath.sol": {
+      "lastModificationDate": 1660374093848,
+      "contentHash": "b45f4e7d06779d09f61f3e8d28d347a1",
+      "sourceName": "src/lib/FullMath.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
           },
           "metadata": {
             "bytecodeHash": "ipfs"
@@ -597,8 +429,370 @@
         }
       },
       "imports": [],
-      "versionRequirement": null,
-      "artifacts": {}
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "FullMath": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "FullMath.sol/FullMath.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/Multicall.sol": {
+      "lastModificationDate": 1660374093848,
+      "contentHash": "971561038532fd1912253ef46317633a",
+      "sourceName": "src/lib/Multicall.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "Multicall": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Multicall.sol/Multicall.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/Ownable.sol": {
+      "lastModificationDate": 1660374093848,
+      "contentHash": "c62776c429fa465a39eae8d2a37099a1",
+      "sourceName": "src/lib/Ownable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "Ownable": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Ownable.sol/Ownable.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/SelfPermit.sol": {
+      "lastModificationDate": 1660374093849,
+      "contentHash": "05769037d0702ea13ffc137e53714d45",
+      "sourceName": "src/lib/SelfPermit.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol"
+      ],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "SelfPermit": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "SelfPermit.sol/SelfPermit.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/ERC20StakingPool.t.sol": {
+      "lastModificationDate": 1660381494434,
+      "contentHash": "d5dbf8c5586b262784d9e79a075af494",
+      "sourceName": "src/test/ERC20StakingPool.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/ds-test/src/test.sol",
+        "lib/solmate/src/auth/Owned.sol",
+        "lib/solmate/src/mixins/ERC4626.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "lib/solmate/src/utils/FixedPointMathLib.sol",
+        "lib/solmate/src/utils/SafeTransferLib.sol",
+        "src/ERC20StakingPool.sol",
+        "src/lib/FullMath.sol",
+        "src/lib/Multicall.sol",
+        "src/lib/SelfPermit.sol",
+        "src/test/base/BaseTest.sol",
+        "src/test/mocks/TestERC20.sol",
+        "src/test/utils/VM.sol",
+        "src/test/utils/console.sol"
+      ],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "ERC20StakingPoolTest": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20StakingPool.t.sol/ERC20StakingPoolTest.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/base/BaseTest.sol": {
+      "lastModificationDate": 1660374093850,
+      "contentHash": "57921a0cb2792324ca53cde4ab93e073",
+      "sourceName": "src/test/base/BaseTest.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/ds-test/src/test.sol",
+        "src/test/utils/VM.sol",
+        "src/test/utils/console.sol"
+      ],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "BaseTest": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "BaseTest.sol/BaseTest.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/mocks/TestERC20.sol": {
+      "lastModificationDate": 1660374093851,
+      "contentHash": "b710ed9dc513fc4d82b8dab5766d8e01",
+      "sourceName": "src/test/mocks/TestERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol"
+      ],
+      "versionRequirement": "^0.8.11",
+      "artifacts": {
+        "TestERC20": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "TestERC20.sol/TestERC20.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/mocks/TestERC721.sol": {
+      "lastModificationDate": 1660374093851,
+      "contentHash": "2ae61c565d952f0085595ef2b86260fe",
+      "sourceName": "src/test/mocks/TestERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC721.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "TestERC721": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "TestERC721.sol/TestERC721.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/utils/VM.sol": {
+      "lastModificationDate": 1660374093852,
+      "contentHash": "73c33b3efe96508e69ead48709cdbf95",
+      "sourceName": "src/test/utils/VM.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "VM": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "VM.sol/VM.json"
+        }
+      }
+    },
+    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/utils/console.sol": {
+      "lastModificationDate": 1660374093852,
+      "contentHash": "dd78d01db1c0158473f2140902a8ae12",
+      "sourceName": "src/test/utils/console.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.4.22, <0.9.0",
+      "artifacts": {
+        "console": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "console.sol/console.json"
+        }
+      }
     }
   }
 }
