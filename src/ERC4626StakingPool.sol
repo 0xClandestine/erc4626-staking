@@ -10,11 +10,12 @@ import {FullMath} from "./lib/FullMath.sol";
 import {Multicall} from "./lib/Multicall.sol";
 import {SelfPermit} from "./lib/SelfPermit.sol";
 
-/// @title ERC20StakingPool
-/// @author zefram.eth
+/// @title ERC4626StakingPool
+/// @author 0xClandestine 
+///     modified from https://github.com/ZeframLou/playpen/blob/main/src/ERC20StakingPool.sol
 /// @notice A modern, gas optimized staking pool contract for rewarding ERC20 stakers
-/// with ERC20 tokens periodically and continuously
-contract ERC20StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
+/// with ERC20 tokens periodically and continuously, deposits are wrapped as an ERC20.
+contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// -----------------------------------------------------------------------
     /// Library usage
     /// -----------------------------------------------------------------------
@@ -84,8 +85,6 @@ contract ERC20StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// Initialization
     /// -----------------------------------------------------------------------
 
-    /// @notice Initializes the owner, called by StakingPoolFactory
-    /// @param initialOwner The initial owner of the contract
     constructor(
         address initialOwner, 
         address _rewardToken, 
@@ -100,7 +99,7 @@ contract ERC20StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// -----------------------------------------------------------------------
     /// Transfer Logic
     /// -----------------------------------------------------------------------
-
+    
     function transfer(address to, uint256 amount) public virtual override returns (bool) {
         getReward(msg.sender);
         getReward(to);
@@ -254,7 +253,7 @@ contract ERC20StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     function getReward() public {
         getReward(msg.sender);
     }
-    
+
     /// -----------------------------------------------------------------------
     /// Getters
     /// -----------------------------------------------------------------------

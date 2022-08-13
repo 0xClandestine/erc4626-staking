@@ -4,23 +4,23 @@ pragma solidity ^0.8.4;
 import {BaseTest, console} from "./base/BaseTest.sol";
 
 import {TestERC20} from "./mocks/TestERC20.sol";
-import {ERC20StakingPool} from "../ERC20StakingPool.sol";
+import {ERC4626StakingPool} from "../ERC4626StakingPool.sol";
 
-contract ERC20StakingPoolTest is BaseTest {
+contract ERC4626StakingPoolTest is BaseTest {
     uint64 constant DURATION = 365 days;
     uint256 constant REWARD_AMOUNT = 10 ether;
     address constant tester = address(0x69);
 
     TestERC20 rewardToken;
     TestERC20 stakeToken;
-    ERC20StakingPool stakingPool;
+    ERC4626StakingPool stakingPool;
 
     function setUp() public {
 
         rewardToken = new TestERC20();
         stakeToken = new TestERC20();
 
-        stakingPool = new ERC20StakingPool(
+        stakingPool = new ERC4626StakingPool(
             address(this),
             address(rewardToken),
             address(stakeToken),
