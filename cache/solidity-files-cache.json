@@ -315,8 +315,8 @@
       }
     },
     "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/ERC4626StakingPool.sol": {
-      "lastModificationDate": 1660390409595,
-      "contentHash": "548d2b68f4e0912bf98c16a991fec6ed",
+      "lastModificationDate": 1660392056667,
+      "contentHash": "c8a8963332aa28e5423e16b6baa928bb",
       "sourceName": "src/ERC4626StakingPool.sol",
       "solcConfig": {
         "settings": {
