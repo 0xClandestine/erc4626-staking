@@ -14,7 +14,7 @@ import {SelfPermit} from "./lib/SelfPermit.sol";
 /// @author 0xClandestine 
 ///     modified from https://github.com/ZeframLou/playpen/blob/main/src/ERC20StakingPool.sol
 /// @notice A modern, gas optimized staking pool contract for rewarding ERC20 stakers
-/// with ERC20 tokens periodically and continuously, deposits are wrapped as an ERC20.
+/// with ERC20 tokens periodically and continuously, deposits are wrapped as an ERC4626.
 contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// -----------------------------------------------------------------------
     /// Library usage
@@ -50,22 +50,17 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// Storage variables
     /// -----------------------------------------------------------------------
 
-    /// @notice The last Unix timestamp (in seconds) when rewardPerTokenStored was updated
-    uint64 public lastUpdateTime;
-    
-    /// @notice The Unix timestamp (in seconds) at which the current reward period ends
-    uint64 public periodFinish;
+    /// @notice Struct containing reward info pertaining to the entire contract
+    /// @param The last Unix timestamp (in seconds) when rewardPerTokenStored was updated
+    /// @param The Unix timestamp (in seconds) at which the current reward period ends
+    /// @param The per-second rate at which rewardPerToken increases
+    struct RewardInfo {
+        uint64 lastUpdateTime;
+        uint64 periodFinish;
+        uint128 rewardRate;
+    }
 
-    /// @notice The per-second rate at which rewardPerToken increases
-    uint256 public rewardRate;
-
-    /// @notice The last stored rewardPerToken value
-    uint256 public rewardPerTokenStored;
-
-    /// @notice Tracks if an address can call notifyReward()
-    mapping(address => bool) public isRewardDistributor;
-
-    /// @notice Struct containing reward info for any given user.
+    /// @notice Struct containing reward info pertaining to any given user
     /// @param rewards The rewardPerToken value when an account last staked/withdrew rewards
     /// @param rewardPerTokenPaid The earned() value when an account last staked/withdrew rewards
     struct UserInfo {
@@ -73,7 +68,15 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         uint128 rewardPerTokenPaid;
     }
 
+    RewardInfo public rewardInfo;
+
     mapping(address => UserInfo) public userInfo; 
+
+    /// @notice Tracks if an address can call notifyReward()
+    mapping(address => bool) public isRewardDistributor;
+
+    /// @notice The last stored rewardPerToken value
+    uint256 public rewardPerTokenStored;
 
     /// -----------------------------------------------------------------------
     /// Immutable parameters
@@ -133,14 +136,15 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         if (amount == 0) return;
 
         UserInfo storage user = userInfo[who];
+        RewardInfo storage info = rewardInfo;
 
         uint256 balance = balanceOf[who];
         uint64 lastTimeApplicable_ = lastTimeApplicable();
         uint256 totalSupply_ = totalSupply;
-        uint256 rewardPerToken_ = _rewardPerToken(totalSupply_, lastTimeApplicable_, rewardRate);
+        uint256 rewardPerToken_ = _rewardPerToken(totalSupply_, lastTimeApplicable_, info.rewardRate);
 
         rewardPerTokenStored = rewardPerToken_;
-        lastUpdateTime = lastTimeApplicable_;
+        info.lastUpdateTime = lastTimeApplicable_;
 
         user.rewards = uint128(
             _earned(
@@ -159,14 +163,15 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         if (amount == 0) return;
 
         UserInfo storage user = userInfo[who];
+        RewardInfo storage info = rewardInfo;
 
         uint256 balance = balanceOf[who];
         uint64 lastTimeApplicable_ = lastTimeApplicable();
         uint256 totalSupply_ = totalSupply;
-        uint256 rewardPerToken_ = _rewardPerToken(totalSupply_, lastTimeApplicable_, rewardRate);
+        uint256 rewardPerToken_ = _rewardPerToken(totalSupply_, lastTimeApplicable_, info.rewardRate);
 
         rewardPerTokenStored = rewardPerToken_;
-        lastUpdateTime = lastTimeApplicable_;
+        info.lastUpdateTime = lastTimeApplicable_;
         
         user.rewards = uint128(
             _earned(
@@ -234,13 +239,15 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
     /// @notice Withdraws all earned rewards for an address
     function getReward(address who) public {
 
+        RewardInfo storage info = rewardInfo;
+
         uint256 balance = balanceOf[who];
         uint64 lastTimeApplicable_ = lastTimeApplicable();
         uint256 totalSupply_ = totalSupply;
         uint256 rewardPerToken_ = _rewardPerToken(
             totalSupply_,
             lastTimeApplicable_,
-            rewardRate
+            info.rewardRate
         );
 
         UserInfo storage user = userInfo[who];
@@ -254,7 +261,7 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
 
         // accrue rewards
         rewardPerTokenStored = rewardPerToken_;
-        lastUpdateTime = lastTimeApplicable_;
+        info.lastUpdateTime = lastTimeApplicable_;
         user.rewardPerTokenPaid = uint128(rewardPerToken_);
 
         // withdraw rewards
@@ -278,10 +285,11 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
 
     /// @notice The latest time at which stakers are earning rewards.
     function lastTimeApplicable() public view returns (uint64) {
+        uint64 _periodFinish = rewardInfo.periodFinish;
         return
-            block.timestamp < periodFinish
+            block.timestamp < _periodFinish
                 ? uint64(block.timestamp)
-                : periodFinish;
+                : _periodFinish;
     }
 
     /// @notice The amount of reward tokens each staked token has earned so far
@@ -290,7 +298,7 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
             _rewardPerToken(
                 totalSupply,
                 lastTimeApplicable(),
-                rewardRate
+                rewardInfo.rewardRate
             );
     }
 
@@ -304,7 +312,7 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
                 _rewardPerToken(
                     totalSupply,
                     lastTimeApplicable(),
-                    rewardRate
+                    rewardInfo.rewardRate
                 ),
                 userInfo[account].rewards
             );
@@ -363,9 +371,9 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         /// Storage loads
         /// -----------------------------------------------------------------------
 
+        RewardInfo memory info = rewardInfo;
+
         uint256 totalSupply_ = totalSupply;
-        uint256 rewardRate_ = rewardRate;
-        uint64 periodFinish_ = periodFinish;
 
         /// -----------------------------------------------------------------------
         /// State updates
@@ -374,14 +382,14 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         // accrue rewards
         rewardPerTokenStored = _rewardPerToken(
             totalSupply_,
-            block.timestamp < periodFinish_ ? uint64(block.timestamp) : periodFinish_,
-            rewardRate_
+            block.timestamp < info.periodFinish ? uint64(block.timestamp) : info.periodFinish,
+            info.rewardRate
         );
 
         // record new reward
-        uint256 newRewardRate = block.timestamp >= periodFinish_ ? 
+        uint256 newRewardRate = block.timestamp >= info.periodFinish ? 
             reward / DURATION :
-            ((periodFinish_ - block.timestamp) * rewardRate_ + reward) / DURATION;
+            ((info.periodFinish - block.timestamp) * info.rewardRate + reward) / DURATION;
 
 
         // unchecked because division cannot reasonably underflow
@@ -392,9 +400,11 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
             }
         }
 
-        rewardRate = newRewardRate;
-        lastUpdateTime = uint64(block.timestamp);
-        periodFinish = uint64(block.timestamp + DURATION);
+        rewardInfo = RewardInfo(
+            uint64(block.timestamp),
+            uint64(block.timestamp + DURATION),
+            uint128(newRewardRate)
+        );
 
         emit RewardAdded(reward);
     }
@@ -438,7 +448,7 @@ contract ERC4626StakingPool is Owned, Multicall, SelfPermit, ERC4626 {
         return
             rewardPerTokenStored +
             FullMath.mulDiv(
-                (lastTimeApplicable_ - lastUpdateTime) * RAY,
+                (lastTimeApplicable_ - rewardInfo.lastUpdateTime) * RAY,
                 rewardRate_,
                 totalSupply_
             );
