@@ -9,7 +9,7 @@
     ]
   },
   "files": {
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/clones-with-immutable-args/src/Clone.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/clones-with-immutable-args/src/Clone.sol": {
       "lastModificationDate": 1660374155410,
       "contentHash": "81b2aa906ceb38c83eeb38d7f1a02d02",
       "sourceName": "lib/clones-with-immutable-args/src/Clone.sol",
@@ -46,7 +46,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/ds-test/src/test.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/ds-test/src/test.sol": {
       "lastModificationDate": 1660374159669,
       "contentHash": "962996f0e05d5218857a538a62d7c47e",
       "sourceName": "lib/ds-test/src/test.sol",
@@ -83,7 +83,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/auth/Owned.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/auth/Owned.sol": {
       "lastModificationDate": 1660374260582,
       "contentHash": "cbb684ea20bea675b7d97397da4bfd95",
       "sourceName": "lib/solmate/src/auth/Owned.sol",
@@ -120,7 +120,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/mixins/ERC4626.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/mixins/ERC4626.sol": {
       "lastModificationDate": 1660374260593,
       "contentHash": "b3b17f857a7cdf1ebd62b5c46e700f12",
       "sourceName": "lib/solmate/src/mixins/ERC4626.sol",
@@ -161,7 +161,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/tokens/ERC20.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/tokens/ERC20.sol": {
       "lastModificationDate": 1660374260695,
       "contentHash": "0c7c7ada139062536af09d69d96d395c",
       "sourceName": "lib/solmate/src/tokens/ERC20.sol",
@@ -198,7 +198,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/tokens/ERC721.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/tokens/ERC721.sol": {
       "lastModificationDate": 1660374260697,
       "contentHash": "ecc06cefc5404b9e1adbc2e459d5757e",
       "sourceName": "lib/solmate/src/tokens/ERC721.sol",
@@ -238,7 +238,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/utils/FixedPointMathLib.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/utils/FixedPointMathLib.sol": {
       "lastModificationDate": 1660374260706,
       "contentHash": "a325f1ebf8e23098b8a8c882f84609d4",
       "sourceName": "lib/solmate/src/utils/FixedPointMathLib.sol",
@@ -275,7 +275,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/lib/solmate/src/utils/SafeTransferLib.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/lib/solmate/src/utils/SafeTransferLib.sol": {
       "lastModificationDate": 1660374260714,
       "contentHash": "db5e8a3ee2df4fb8eb2d552a01753920",
       "sourceName": "lib/solmate/src/utils/SafeTransferLib.sol",
@@ -314,10 +314,10 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/ERC20StakingPool.sol": {
-      "lastModificationDate": 1660381552077,
-      "contentHash": "d4f555c879bc1a4041597986d58ed39e",
-      "sourceName": "src/ERC20StakingPool.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/ERC4626StakingPool.sol": {
+      "lastModificationDate": 1660388627278,
+      "contentHash": "307dec06a93cc211c98d8f2eee60a24f",
+      "sourceName": "src/ERC4626StakingPool.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -355,12 +355,12 @@
       ],
       "versionRequirement": "^0.8.4",
       "artifacts": {
-        "ERC20StakingPool": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20StakingPool.sol/ERC20StakingPool.json"
+        "ERC4626StakingPool": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC4626StakingPool.sol/ERC4626StakingPool.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/ERC20.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/lib/ERC20.sol": {
       "lastModificationDate": 1660374093847,
       "contentHash": "2cbc5f91cd3cc9ee6d15f98652cb3cc7",
       "sourceName": "src/lib/ERC20.sol",
@@ -399,7 +399,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/FullMath.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/lib/FullMath.sol": {
       "lastModificationDate": 1660374093848,
       "contentHash": "b45f4e7d06779d09f61f3e8d28d347a1",
       "sourceName": "src/lib/FullMath.sol",
@@ -436,7 +436,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/Multicall.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/lib/Multicall.sol": {
       "lastModificationDate": 1660374093848,
       "contentHash": "971561038532fd1912253ef46317633a",
       "sourceName": "src/lib/Multicall.sol",
@@ -473,7 +473,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/Ownable.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/lib/Ownable.sol": {
       "lastModificationDate": 1660374093848,
       "contentHash": "c62776c429fa465a39eae8d2a37099a1",
       "sourceName": "src/lib/Ownable.sol",
@@ -510,7 +510,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/lib/SelfPermit.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/lib/SelfPermit.sol": {
       "lastModificationDate": 1660374093849,
       "contentHash": "05769037d0702ea13ffc137e53714d45",
       "sourceName": "src/lib/SelfPermit.sol",
@@ -549,10 +549,10 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/ERC20StakingPool.t.sol": {
-      "lastModificationDate": 1660381494434,
-      "contentHash": "d5dbf8c5586b262784d9e79a075af494",
-      "sourceName": "src/test/ERC20StakingPool.t.sol",
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/ERC4626StakingPool.t.sol": {
+      "lastModificationDate": 1660388651280,
+      "contentHash": "b33432cdcdf0f2d12f17c78e541d7651",
+      "sourceName": "src/test/ERC4626StakingPool.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -585,7 +585,7 @@
         "lib/solmate/src/tokens/ERC20.sol",
         "lib/solmate/src/utils/FixedPointMathLib.sol",
         "lib/solmate/src/utils/SafeTransferLib.sol",
-        "src/ERC20StakingPool.sol",
+        "src/ERC4626StakingPool.sol",
         "src/lib/FullMath.sol",
         "src/lib/Multicall.sol",
         "src/lib/SelfPermit.sol",
@@ -596,12 +596,12 @@
       ],
       "versionRequirement": "^0.8.4",
       "artifacts": {
-        "ERC20StakingPoolTest": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC20StakingPool.t.sol/ERC20StakingPoolTest.json"
+        "ERC4626StakingPoolTest": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "ERC4626StakingPool.t.sol/ERC4626StakingPoolTest.json"
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/base/BaseTest.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/base/BaseTest.sol": {
       "lastModificationDate": 1660374093850,
       "contentHash": "57921a0cb2792324ca53cde4ab93e073",
       "sourceName": "src/test/base/BaseTest.sol",
@@ -642,7 +642,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/mocks/TestERC20.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/mocks/TestERC20.sol": {
       "lastModificationDate": 1660374093851,
       "contentHash": "b710ed9dc513fc4d82b8dab5766d8e01",
       "sourceName": "src/test/mocks/TestERC20.sol",
@@ -681,7 +681,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/mocks/TestERC721.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/mocks/TestERC721.sol": {
       "lastModificationDate": 1660374093851,
       "contentHash": "2ae61c565d952f0085595ef2b86260fe",
       "sourceName": "src/test/mocks/TestERC721.sol",
@@ -720,7 +720,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/utils/VM.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/utils/VM.sol": {
       "lastModificationDate": 1660374093852,
       "contentHash": "73c33b3efe96508e69ead48709cdbf95",
       "sourceName": "src/test/utils/VM.sol",
@@ -757,7 +757,7 @@
         }
       }
     },
-    "/mnt/c/Users/0xClandestine/Desktop/playpen/src/test/utils/console.sol": {
+    "/mnt/c/Users/0xClandestine/Desktop/ERC4626-Staking/ERC4626-Staking/src/test/utils/console.sol": {
       "lastModificationDate": 1660374093852,
       "contentHash": "dd78d01db1c0158473f2140902a8ae12",
       "sourceName": "src/test/utils/console.sol",

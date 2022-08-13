@@ -40,19 +40,12 @@ contract ERC4626StakingPoolTest is BaseTest {
         stakingPool.notifyRewardAmount(REWARD_AMOUNT);
     }
 
-    function testReplayHarvestAfterTransfer() public {
-
-        // account one balance before redeeming
-        emit log_uint(rewardToken.balanceOf(address(this)));
-
+    function testExploitUsersTransferAfterHavestToHarvestAgain() public {
         vm.warp(7 days);
         stakingPool.getReward();
 
-        // account one balance after redeeming
-        emit log_uint(rewardToken.balanceOf(address(this)));
-
         // account one transfers all tokens to another account
-        stakingPool.transfer(tester, stakingPool.balanceOf(address(this)));
+        stakingPool.transfer(tester, 1 ether);
 
         // account two redeems
         vm.prank(tester);
@@ -60,8 +53,26 @@ contract ERC4626StakingPoolTest is BaseTest {
 
         uint256 testerRewardBalance = rewardToken.balanceOf(tester);
 
-        // account two balance after redeeming for second time
-        emit log_uint(rewardToken.balanceOf(tester));
+        // account two should not have a balance
+        assertEq(testerRewardBalance, 0);
+    }
+
+    function testExploitUsersTransferFromAfterHavestToHarvestAgain() public {
+        vm.warp(7 days);
+        stakingPool.getReward();
+
+        assertEq(stakingPool.balanceOf(address(this)), 1 ether);
+
+
+        // account one transfers all tokens to another account
+        stakingPool.approve(address(this), 1 ether);
+        stakingPool.transferFrom(address(this), tester, 1 ether);
+
+        // account two redeems
+        vm.prank(tester);
+        stakingPool.getReward();
+
+        uint256 testerRewardBalance = rewardToken.balanceOf(tester);
 
         // account two should not have a balance
         assertEq(testerRewardBalance, 0);
